@@ -37,7 +37,7 @@ conda activate GA_EVLRU
 Installing the required packages:
 
 ```shell
-pip install -r requirements.txt
+pip install -r requirements.txt 
 ```
 
 ## Running GA-EVLRU
