@@ -1,0 +1,19 @@
+genetic_algorithm:
+  # Population size
+  POP_SIZE: 100
+  # Crossover rate
+  CROSS_RATE: 0.8
+  # Mutation rate
+  MUTATION_RATE: 0.005
+  # Number of generations
+  GENERATIONS: 500
+  # Unit price for charging 100kWh battery from 0% to 93% in 60 minutes
+  PER_A: 60 / 60 * (100)
+  # Unit price for charging 70/75kWh battery in 45 minutes
+  PER_B: 45 / 60 * (70 + 75) / 2
+  # Maximum number of type A batteries
+  MAX_A: 5
+  # Maximum number of type B batteries
+  MAX_B: 8
+  # User satisfaction minimum
+  SA: 0.9

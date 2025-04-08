@@ -1,0 +1,14 @@
+areas:
+- '595'
+- '633'
+- '690'
+- '775'
+- '1131'
+eprice: price
+has_price: true
+model: lightgbm
+name:
+- st-evcdp
+r:
+- 576
+timestamp: 5

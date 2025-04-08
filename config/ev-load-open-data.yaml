@@ -1,0 +1,10 @@
+area:
+- Demand
+areas:
+- Demand
+has_price: false
+model: lightgbm
+name:
+- sap
+r:
+- 31407

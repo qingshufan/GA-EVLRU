@@ -1,0 +1,14 @@
+areas:
+- '592'
+- '595'
+- '633'
+- '1026'
+- '1167'
+eprice: urbanev/e_price
+has_price: true
+model: lightgbm
+name:
+- urbanev
+r:
+- 2328
+timestamp: 60
