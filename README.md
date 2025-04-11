@@ -1,7 +1,8 @@
 <div align="center">
 <h1>Genetic Algorithm - EV Least Recently Used</h1>
 
-![https://arxiv.org/abs/2504.07453](https://img.shields.io/badge/Paper-%20GA_EVLRU%20-red)<a ><img alt="PRs-Welcome" src="https://img.shields.io/badge/PRs-Welcome-white" /></a>[![GitHub Stars](https://img.shields.io/github/stars/qingshufan/GA-EVLRU.svg)](https://github.com/qingshufan/GA-EVLRU/stargazers)<a href="https://github.com/qingshufan/GA-EVLRU/network/members">
+<a href="https://arxiv.org/abs/2504.07453"><img src='https://img.shields.io/badge/Paper-%20GA_EVLRU%20-red' alt='Paper PDF'></a>
+<a ><img alt="PRs-Welcome" src="https://img.shields.io/badge/PRs-Welcome-white" /></a>[![GitHub Stars](https://img.shields.io/github/stars/qingshufan/GA-EVLRU.svg)](https://github.com/qingshufan/GA-EVLRU/stargazers)<a href="https://github.com/qingshufan/GA-EVLRU/network/members">
 <img alt="FORK" src="https://img.shields.io/github/forks/qingshufan/GA-EVLRU?color=white" />
 </a> [![GitHub Issues](https://img.shields.io/github/issues/qingshufan/GA-EVLRU.svg)](https://github.com/qingshufan/GA-EVLRU/issues)[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://opensource.org/licenses/gpl-3-0)
 
