@@ -17,6 +17,7 @@ This study proposes a probability estimation model based on charging pile data a
 </div>
 
 ## News
+- **2025-04-12:** The GA-EVLRU Huggingface Datasets are released.
 - **2025-04-08:** Paper and code are all released.
 
 ## Our BSS datasets
