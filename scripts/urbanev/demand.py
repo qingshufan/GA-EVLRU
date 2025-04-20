@@ -74,7 +74,7 @@ for area in tqdm(areas, desc="Processing areas"):
             elif next_index >= len(duration_col):
                 i = next_index
                 continue
-            avg_charge_duration = 5 * consecutive_count
+            avg_charge_duration = timestamp * consecutive_count
             avg_charge_volume = (total_volume / (int(current_duration * 60 / timestamp) if int(current_duration * 60 / timestamp) != 0 else 1) * charge_count if charge_count > 0 else 0) * consecutive_count
             start_timestamp = pd.to_datetime(duration_df.iloc[i, 0])
 
