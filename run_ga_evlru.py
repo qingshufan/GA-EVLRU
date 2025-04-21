@@ -118,9 +118,7 @@ def process_area(name,area,folder_path):
         total_demand_b = sum(DEMAND_B)
         total_supply_a = sum(individual[:24])
         total_supply_b = sum(individual[24:])
-        dissatisfaction = abs(total_demand_a - total_supply_a) + abs(
-            total_demand_b - total_supply_b
-        )
+        dissatisfaction = abs(total_demand_a - total_supply_a) + abs(total_demand_b - total_supply_b)
         rate_dissatisfaction = dissatisfaction / (total_demand_a + total_demand_b)
         return rate_dissatisfaction
 
@@ -141,17 +139,15 @@ def process_area(name,area,folder_path):
 
     # Selection
     def selection(population):
-        return [
-            population[
-                (
-                    random.sample(range(POP_SIZE), 2)[0]
-                    if fitness(population[random.sample(range(POP_SIZE), 2)[0]])
-                    < fitness(population[random.sample(range(POP_SIZE), 2)[1]])
-                    else random.sample(range(POP_SIZE), 2)[1]
-                )
-            ]
-            for _ in range(POP_SIZE)
-        ]
+        selected = []
+        for _ in range(POP_SIZE):
+            indices = random.sample(range(POP_SIZE), 2)
+            idx1, idx2 = indices[0], indices[1]
+            if fitness(population[idx1]) < fitness(population[idx2]):
+                selected.append(population[idx1])
+            else:
+                selected.append(population[idx2])
+        return selected
 
     # Crossover
     def crossover(parent1, parent2):

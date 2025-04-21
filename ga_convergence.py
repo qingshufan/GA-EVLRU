@@ -147,22 +147,22 @@ def calculate_cost(individual, PRICE, PER_A, PER_B):
     return cost
 
 
-def calculate_satisfaction(individual, DEMAND_A, DEMAND_B):
+def calculate_dissatisfaction(individual, DEMAND_A, DEMAND_B):
     total_demand_a = sum(DEMAND_A)
     total_demand_b = sum(DEMAND_B)
     total_supply_a = sum(individual[:24])
     total_supply_b = sum(individual[24:])
-    satisfaction = abs(total_demand_a - total_supply_a) + abs(total_demand_b - total_supply_b)
-    rate_satisfaction = satisfaction / (total_demand_a + total_demand_b)
-    return rate_satisfaction
+    dissatisfaction = abs(total_demand_a - total_supply_a) + abs(total_demand_b - total_supply_b)
+    rate_dissatisfaction = dissatisfaction / (total_demand_a + total_demand_b)
+    return rate_dissatisfaction
 
 
 def fitness(individual, PRICE, PER_A, PER_B, DEMAND_A, DEMAND_B, cost_max):
     cost = calculate_cost(individual, PRICE, PER_A, PER_B)
     rate_cost = cost / cost_max
-    rate_satisfaction = calculate_satisfaction(individual, DEMAND_A, DEMAND_B)
-    score = 1 * rate_cost + 1 * rate_satisfaction
-    score += 0 if (1 - rate_satisfaction) > SA else 2
+    rate_dissatisfaction = calculate_dissatisfaction(individual, DEMAND_A, DEMAND_B)
+    score = rate_cost + rate_dissatisfaction
+    score += 2 if (1 - rate_dissatisfaction) < SA else 0
     return score
 
 
