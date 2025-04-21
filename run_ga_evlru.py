@@ -112,17 +112,17 @@ def process_area(name,area,folder_path):
             individual[24:] * PRICE * PER_B
         )
 
-    # Calculate satisfaction rate
-    def calculate_satisfaction(individual):
+    # Calculate dissatisfaction rate
+    def calculate_dissatisfaction(individual):
         total_demand_a = sum(DEMAND_A)
         total_demand_b = sum(DEMAND_B)
         total_supply_a = sum(individual[:24])
         total_supply_b = sum(individual[24:])
-        satisfaction = abs(total_demand_a - total_supply_a) + abs(
+        dissatisfaction = abs(total_demand_a - total_supply_a) + abs(
             total_demand_b - total_supply_b
         )
-        rate_satisfaction = satisfaction / (total_demand_a + total_demand_b)
-        return rate_satisfaction
+        rate_dissatisfaction = dissatisfaction / (total_demand_a + total_demand_b)
+        return rate_dissatisfaction
 
     # Initialize population
     def init_population():
@@ -134,9 +134,9 @@ def process_area(name,area,folder_path):
     # Calculate fitness
     def fitness(individual):
         rate_cost = calculate_cost(individual) / cost_max
-        rate_satisfaction = calculate_satisfaction(individual)
-        score = rate_cost + (1 - rate_satisfaction)
-        score += 2 if (1 - rate_satisfaction) <= SA else 0
+        rate_dissatisfaction = calculate_dissatisfaction(individual)
+        score = rate_cost + rate_dissatisfaction
+        score += 2 if (1 - rate_dissatisfaction) < SA else 0
         return score
 
     # Selection
@@ -194,7 +194,7 @@ def process_area(name,area,folder_path):
     init_cost = round(cost_max, 4)
     last_cost = round(calculate_cost(best_individual), 4)
     optimization = round((1 - (last_cost / init_cost)) * 100, 4)
-    satisfaction_level = round((1 - calculate_satisfaction(best_individual)) * 100, 4)
+    satisfaction_level = round((1 - calculate_dissatisfaction(best_individual)) * 100, 4)
     elapsed_time = round(elapsed_time, 4)
 
     # Calculate storage
@@ -245,7 +245,7 @@ def process_area(name,area,folder_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python ga_convergence.py <config_name>")
+        print("Usage: python run_ga_evlru.py <config_name>")
         sys.exit(1)
     config_name = sys.argv[1]
     with open(f'config/{config_name}.yaml', 'r') as file:
