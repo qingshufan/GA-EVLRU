@@ -161,14 +161,14 @@ def fitness(individual, PRICE, PER_A, PER_B, DEMAND_A, DEMAND_B, cost_max):
     cost = calculate_cost(individual, PRICE, PER_A, PER_B)
     rate_cost = cost / cost_max
     rate_dissatisfaction = calculate_dissatisfaction(individual, DEMAND_A, DEMAND_B)
-    score = rate_cost + rate_dissatisfaction
+    score = rate_cost + (1 - rate_dissatisfaction)
     score += 2 if (1 - rate_dissatisfaction) < SA else 0
     return score
 
 
 def selection(population, PRICE, PER_A, PER_B, DEMAND_A, DEMAND_B, cost_max):
     selected = []
-    for _ in range(POP_SIZE):
+    for _ in range(POP_SIZE):                                                              
         i, j = random.sample(range(POP_SIZE), 2)
         if fitness(population[i], PRICE, PER_A, PER_B, DEMAND_A, DEMAND_B, cost_max) < fitness(population[j], PRICE, PER_A, PER_B, DEMAND_A, DEMAND_B, cost_max):
             selected.append(population[i])

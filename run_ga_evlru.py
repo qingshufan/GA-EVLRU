@@ -133,7 +133,7 @@ def process_area(name,area,folder_path):
     def fitness(individual):
         rate_cost = calculate_cost(individual) / cost_max
         rate_dissatisfaction = calculate_dissatisfaction(individual)
-        score = rate_cost + rate_dissatisfaction
+        score = rate_cost + (1 - rate_dissatisfaction)
         score += 2 if (1 - rate_dissatisfaction) < SA else 0
         return score
 

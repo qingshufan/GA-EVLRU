@@ -1,8 +1,8 @@
 areas:
 - '595'
-- '633'
 - '690'
 - '775'
+- '633'
 - '1131'
 eprice: price
 has_price: true
