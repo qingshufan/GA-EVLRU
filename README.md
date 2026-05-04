@@ -82,9 +82,21 @@ The ST-EVCDP dataset is under the MIT license. The UrbanEV dataset is under the 
 If you find this project useful, please consider citing:
 ```bibtex
 @inproceedings{li2025gaevlru,
-      title={Probability Estimation and Scheduling Optimization for Battery Swap Stations via LRU-Enhanced Genetic Algorithm and Dual-Factor Decision System}, 
-      author={Anzhen Li and Shufan Qing and Xiaochang Li and Rui Mao and Mingchen Feng},
-      journal={arXiv preprint arXiv:2504.07453},
-      year={2025}
+  author    = {Li, Anzhen
+               and Qing, Shufan
+               and Li, Xiaochang
+               and Mao, Rui
+               and Feng, Mingchen},
+  editor    = {Huang, De-Shuang
+               and Li, Bo
+               and Chen, Haiming
+               and Zhang, Chuanlei},
+  title     = {Probability Estimation and Scheduling Optimization for Battery Swap Stations via LRU-Enhanced Genetic Algorithm and Dual-Factor Decision System},
+  booktitle = {Advanced Intelligent Computing Technology and Applications},
+  year      = {2025},
+  publisher = {Springer Nature Singapore},
+  address   = {Singapore},
+  pages     = {192--204},
+  isbn      = {978-981-96-9805-9}
 }
 ```
